@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Card } from 'antd';
+// import { Card } from 'antd';
 const { Meta } = Card;
-
+import { Card, Col, Row, Button, Divider, notification } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
 
 interface Product {
     id: number;
@@ -19,27 +20,47 @@ const ProductComponent = () => {
     const renderList = products.map((product) => {
         const { id, title, image, price, category } = product;
         return (
-            <div className="four wide column" key={id}>
-                <Link to={`/product/${id}`}>
+            <Col key={id} md={8}>
+                <Link to={`/product/${id}`} >
                     <Card
                         hoverable
                         style={{
-                            border: '1px solid #e8e8e8',
-                            borderRadius: '7px',
-                            padding: '10px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            height: '350px'
+                            padding: 7,
+                            marginBottom: '6em',
+                            minHeight: '580px',
+                            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                            borderRadius: '10px',
+                            color: '#212121',
                         }}
-                        bordered={true}
-                        cover={<img alt={title} src={image} style={{ maxWidth: 150 }} />}
+                        cover={
+                            <img
+                                height='300px'
+                                width='260px'
+                                alt={title}
+                                src={image}
+                                style={{ objectFit: 'cover', margin: 'auto' }}
+                            />
+                        }
                     >
-                        <Meta title={title} description={category} avatar={price} />
+                        <Card.Meta
+                            title={<h2>{title}</h2>}
+                            description={category}
+                        />
+                        <br></br>
+                        <Divider orientation='center' >Price</Divider>
+                        <p
+                            style={{
+                                lineHeight: '24px',
+                                fontSize: '32px',
+                                color: '#2ecc71',
+                                textAlign: 'center',
+                            }}
+                        >
+                            {`$${price}`}
+                        </p>
                     </Card>
                 </Link>
-            </div>
+            </Col>
         );
     });
 
