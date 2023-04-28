@@ -33,7 +33,7 @@ const ProductListing = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            gap: "1em",
+            gap: "1.3em",
 
         }}>
             <ProductComponent />

@@ -20,7 +20,7 @@ const ProductComponent = () => {
     const renderList = products.map((product) => {
         const { id, title, image, price, category } = product;
         return (
-            <Col key={id} md={8}>
+            <Col key={id} md={6}>
                 <Link to={`/product/${id}`} >
                     <Card
                         hoverable
