@@ -9,7 +9,7 @@ import ProductDetails from './containers/ProductDetails'
 function App() {
 
   return <>
-   <Router>
+    <Router>
       <Header />
       <Routes>
         <Route path="/" element={<ProductListing />} />
