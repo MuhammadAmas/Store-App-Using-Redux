@@ -1,10 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-// import { Card } from 'antd';
-const { Meta } = Card;
-import { Card, Col, Row, Button, Divider, notification } from 'antd';
-import { DeleteOutlined } from '@ant-design/icons';
+import { Card, Col, Divider } from 'antd';
 
 interface Product {
     id: number;
@@ -47,17 +44,18 @@ const ProductComponent = () => {
                             description={category}
                         />
                         <br></br>
-                        <Divider orientation='center' >Price</Divider>
-                        <p
-                            style={{
-                                lineHeight: '24px',
-                                fontSize: '32px',
-                                color: '#2ecc71',
-                                textAlign: 'center',
-                            }}
-                        >
-                            {`$${price}`}
-                        </p>
+                        <Divider orientation='center' >
+                            <p
+                                style={{
+                                    lineHeight: '24px',
+                                    fontSize: '32px',
+                                    color: '#2ecc71',
+                                    textAlign: 'center',
+                                }}
+                            >
+                                {`$${price}`}
+                            </p>
+                        </Divider>
                     </Card>
                 </Link>
             </Col>

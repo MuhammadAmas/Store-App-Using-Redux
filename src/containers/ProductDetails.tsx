@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { removeSelectedProduct, selectedProduct } from "../redux/actions/productActions";
 import { Card, Spin, Divider, Row, Col } from 'antd';
-const { Meta } = Card;
+
+
 interface Product {
     image: string;
     title: string;
@@ -12,6 +13,7 @@ interface Product {
     category: string;
     description: string;
 }
+
 
 const ProductDetails = () => {
     const product: Product = useSelector((state: any) => state.product);
@@ -42,31 +44,6 @@ const ProductDetails = () => {
             {Object.keys(product).length === 0 ? (
                 <Spin tip="Loading" size="large" />
             ) : (
-                // <div className="ui placeholder segment">
-                //     <div className="ui two column stackable center aligned grid">
-                //         <div className="ui vertical divider">AND</div>
-                //         <div className="middle aligned row">
-                //             <div className="column lp">
-                //                 <img className="ui fluid image" alt={title} src={image} />
-                //             </div>
-                //             <div className="column rp">
-                //                 <h1>{title}</h1>
-                //                 <h2>
-                //                     <a className="ui teal tag label">${price}</a>
-                //                 </h2>
-                //                 <h3 className="ui brown block header">{category}</h3>
-                //                 <p>{description}</p>
-                //                 <div className="ui vertical animated button" tabIndex={0}>
-                //                     <div className="hidden content">
-                //                         <i className="shop icon"></i>
-                //                     </div>
-                //                     <div className="visible content">Add to Cart</div>
-                //                 </div>
-                //             </div>
-                //         </div>
-                //     </div>
-                // </div>
-
                 <Card
                     hoverable
                     style={{

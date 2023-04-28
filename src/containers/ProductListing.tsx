@@ -7,7 +7,6 @@ import { Row } from 'antd';
 
 
 const ProductListing = () => {
-    // const products = useSelector((state => state))
     const products = useSelector((state: any) => state.allProducts.products);
     const dispatch = useDispatch();
     const fetchProducts = async () => {
@@ -24,12 +23,8 @@ const ProductListing = () => {
     }, [])
 
     return <>
-        {/* <div className="ui grid container">
-            <ProductComponent />
-        </div> */}
         <Row wrap={true} 
         style={{
-            // margin: "auto"
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
