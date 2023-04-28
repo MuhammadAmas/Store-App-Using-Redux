@@ -1,13 +1,12 @@
 import React from "react";
+import { PageHeader } from 'antd';
 
 const Header: React.FC = () => (
-  <>
-        <div className="ui fixed menu">
-            <div className="ui container center">
-                <h1>Store App</h1>
-            </div>
-        </div>
-    </>
+    <PageHeader
+        className="site-page-header"
+        title="Store App"
+        style={{ border: '2px solid rgb(235, 237, 240)', marginBottom: '2em', padding: '1em', fontWeight: 'bold', fontSize: '2rem'}}
+    />
 );
 
 export default Header;
