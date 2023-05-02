@@ -23,8 +23,8 @@ const ProductListing = () => {
     }, [])
 
     return <>
-        <Row 
-        wrap={true}
+        <Row
+            wrap={true}
             style={{
                 display: "flex",
                 justifyContent: "center",
