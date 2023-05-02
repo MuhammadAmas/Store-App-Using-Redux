@@ -23,14 +23,15 @@ const ProductListing = () => {
     }, [])
 
     return <>
-        <Row wrap={true} 
-        style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "1.3em",
-
-        }}>
+        <Row 
+        wrap={true}
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "1.3em",
+                flexWrap: "wrap",
+            }}>
             <ProductComponent />
         </Row>
     </>

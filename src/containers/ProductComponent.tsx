@@ -25,6 +25,7 @@ const ProductComponent = () => {
                             padding: 7,
                             marginBottom: '6em',
                             minHeight: '580px',
+                            width: '260px',
                             boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
                             borderRadius: '10px',
                             color: '#212121',
