@@ -1,28 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import ProductComponent from "./ProductComponent";
 import { setProducts } from "../redux/actions/productActions";
 import { Row } from 'antd';
-
+import ProductAPI from "../services/getProduct";
 
 const ProductListing = () => {
     const products = useSelector((state: any) => state.allProducts.products);
-    const dispatch = useDispatch();
-    const fetchProducts = async () => {
-        const response: any = await axios
-            .get("https://fakestoreapi.com/products")
-            .catch((err) => {
-                console.log("Err: ", err);
-            });
-        dispatch(setProducts(response.data));
+    const [fetchedProducts, setFetchedProducts] = useState([]);
+
+    const setProductsCallback = (data) => {
+        setFetchedProducts(data);
     };
 
-    useEffect(() => {
-        fetchProducts();
-    }, [])
-
     return <>
+        <ProductAPI setProductsCallback={setProductsCallback} />
         <Row
             wrap={true}
             style={{
