@@ -1,38 +1,3 @@
-// import { useEffect } from "react";
-// import { useDispatch } from "react-redux";
-// import { useParams } from "react-router-dom";
-// import { removeSelectedProduct, selectedProduct } from "../redux/actions/productActions";
-// import axios from "axios";
-
-// // const { image, title, price, category, description } = product;
-
-
-// export default function ProductDetailsAPI({ setProductDetailsCallback }) {
-
-//     const dispatch = useDispatch();
-//     const { productId }: any = useParams();
-//     // console.log(product)
-
-//     const fetchProductDetails = async () => {
-//         const response: any = await axios
-//             .get(`https://fakestoreapi.com/products/${productId}`)
-//             .catch((err) => {
-//                 console.log("Err: ", err);
-//             });
-//         dispatch(selectedProduct(response.data));
-//         setProductDetailsCallback(response.data);
-//     }
-
-//     useEffect(() => {
-//         if (productId && productId !== "") fetchProductDetails();
-//         return () => {
-//             fetchProductDetails();
-//             dispatch(removeSelectedProduct())
-//         }
-//     }, [productId])
-// }
-
-
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
